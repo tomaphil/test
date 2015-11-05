@@ -1,0 +1,278 @@
+CyberGarageScn3Keny
+===================
+
+* `2015-09-18`
+* Le |Client|:|keny| a un accrochage avec son |Vehicule|:|v684QBC|.
+* |keny| déclare le |Sinistre| auprès de sa société d'assurance assurturix.
+* |keny| reçoit le |NumeroDeSinistre| `4587522154`.
+* `2015-09-19 23:10`
+* |keny| se rend à la |Reception| du |Garage|:|gCC| `Chicoutimi Central`.
+* |hausi|:|Employe| demande à |keny| le |NumeroDImmatriculation|.
+* |keny| indique `"684QBC"`.
+* |hausi| indique que |keny| est déjà |Client|e gràce à |sysClt|:|CyberClientelle|.
+* |hausi| lui donne son |NumeroDeClient| `"01872E"`.
+* |hausi| lui indique que 8 contrats ont été enregistrés pour |v684QBC|.
+* |hausi| liste les |Contrat|s valides `2015-09-18`: |c1|,|c2|,|c3|.
+* |keny| indique qu'elle n'a pas de nouveaux |Contrat|s.
+* |hausi| lui indique d'aller à la |Reception| de l'|Atelier| avec |v684QBC|.
+* `2015-09-19 23:20`
+* |sofia|:|ChefDAtelier| reçoit |keny| et elles font le tour de |v684QBC|.
+* |sofia| voit que la porte arrière gauche doit être réparée.
+* |sofia| indique que le montant de la |Reparation| pourrait être d'environ $600.
+* |keny| indique qu'elle a des |Contrat|s.
+* |sofia| cherche le |Vehicule| immatriculé `"684QBC"`.
+* |sofia| voit que deux |Reparation|s ont eu lieu dans le passé sur |v684QBC|.
+* |sofia| voit les intitulés des trois |Contrat| valides (|c1|,|c2|,|c3|).
+* |sofia| indique que |keny| pourra bénéficier sans doute de plus de 50% d'abbatements.
+* |keny| décide de laisser son |Vehicule| pour une |Reparation|
+* |keny| demande à |sofia| de vérifier le circuit de refroidissement.
+* |sofia| regarde le kilometrage `156000` et conseille à |keny| de faire une vidange.
+* |keny| accepte.
+* |sofia| crée une nouvelle |Reparation|:|r874| pour |v684QBC|.
+* |sofia| prévoit une date de |MisADisposition| au `2015-09-20`.
+* |sofia| imprime un bordereau de prise en charge daté du `2015-09-19`.
+* |sofia| donne une copie à |keny|.
+* |keny| part en bus.
+* `2015-09-19 23:55`
+* |sofia| consulte les |Intervention|s en cours dans le garage.
+* |sofia| s'appercoit que |maurice|:|Intervenant| est disponible.
+* |sofia| décide de créer l'|Intervention|:|i232| pour la vidange de |v684QBC|.
+* |i232| requière la |Qualification|:|q3|.
+* |sofia| regarde la liste des |Intervenant|s libres qualifiés |q3|.
+* |sofia| choisi |maurice| dans cette liste.
+* L'|Intervention|:|i232| est en attente.
+* La |Reparation|:|r874| devient une |ReparationEnAttente|.
+* |maurice| est appelé.
+* `2015-09-19 23:59`
+* |sysStk|:|CyberStock| importe la liste des |Fourniture|s fournies du `2015-09-19`.
+* `2015-09-20 00:00`
+* |maurice| indique à |sofia| qu'il se met à travailler sur |v684QBC|.
+* |sofia| démarre |i232|.
+* La |Reparation|:|r874| devient une |ReparationEnCours|.
+* |maurice| fait la vidange.
+* Il manque de l'huile
+* |maurice| va chercher de l'huile au |Magazin|.
+* |maurice| demande au |Magazinier|:|toufik| de l'huile moteur.
+* |toufik| voit que |maurice| est en train d'intervenir pour |i232|.
+* |toufik| voit que |i232| concerne le |TypeDeVehicule| `"ACADIAN Beaumont"`.
+* |toufik| va chercher chercher `2` bidons d'`"huile moteur Q8"`. 
+* |toufik| scanne le premier bidon (code `"RTE2535"`), puis le deuxième (même chausiode).
+* |toufik| donne les bidons à |maurice|.
+* |maurice| continue la vidange.
+* |maurice| vérifie le filtre à huile et s'appercoit qu'il faudrait le changer.
+* |maurice| retourne au |Magazin| chercher un filtre à huile.
+* |toufik| lui donne un filtre à huile et scanne le code correspondant (`"RTE8575"`)
+* `2015-09-20 00:30`
+* |maurice| a terminé la vidange.
+* |sofia| boucle l'|Intervention|:|i232|.
+* La durée de |i232| est de `30` mn.
+* La |Reparation|:|r874| devient une |ReparationEnPlan|.
+* `2015-09-20 00:35`
+* |maurice| dit à |sofia| qu'il voudrait rentrer.
+* |sofia| lui dit ok.
+* |maurice| va se laver.
+* |maurice| pointe et devient |Absent|.
+* |sofia| reçoit un nouveau |Client|.
+* `2015-09-20 00:40`
+* |bob|:|Intervenant| arrive à l'atelier et pointe.
+* |bob| fait le tour de l'|Atelier| et va voir les différents |ChefDAtelier|.
+* |bob| est qualifié |q2|:|Qualification|, |qo6|:|Qualification|.
+* |bob| se rend dans l'|EspaceDetente| et espère qu'il sera bientôt appelé.
+* `2015-09-20 01:00`
+* |sofia| décide de s'occuper de nouveau de la |Reparation|:|r874| pour |keny|.
+* |sofia| décide de créer une nouvelle |Intervention|:|i243|.
+* Il s'agit du démontage/montage de la porte arrière gauche.
+* |i243| requière la |Qualification|:|q2|.
+* |sofia| désigne |bob| comme |Intervenant| car il est disponible.
+* |sofia| ne le connait pas mais elle a envie de voir s'il travaille bien et vite.
+* |bob| est appelé.
+* La |Reparation|:|r874| devient une |ReparationEnAttente|.
+* `2015-09-20 01:01`
+* |bob| rencontre |sofia| et démarre immédiatement le démontage de la porte.
+* |sofia| démarre l'intervention |i243|.
+* |bob| devient occupé.
+* La |Reparation|:|r874| devient une |ReparationEnCours| car |i243| est maintenant en cours.
+* `2015-09-20 01:15`
+* |sofia| crée une autre |Intervention|:|i246|.
+* Il s'agit de traiter le problème lié au liquide de refroidissement.
+* |i246| requière la |Qualification|:|q1|.
+* Parmi les |Intervenant|s qui sont qualifiés |q1| seul |john|:|Intervenant| est disponible.  
+* |sofia| n'aime pas beaucoup travailler avec lui, mais elle ne veut pas attendre.
+* |john| est appelé.
+* La |Reparation|:|r874| reste une |ReparationEnCours| car |i243| est encore en cours.
+* `2015-09-20 01:20`
+* |john| commence à chercher l'origine de la fuite pour |i246|.
+* |sofia| démarre donc l'|Intervention|:|i246|.
+* `2015-09-20 01:25`
+* |john| a trouvé la fuite dans le circuit de refroidissement (|i246|).
+* Il se rend au |Magazin| et demande `1` bague sertie et du liquide de refroidissement.
+* |djamila|:|Magaziner| lui donne ces fournitures et les comptabilise.
+* |sofia| s'appercoit que |bob| terminera bientôt le démontage de la porte (|i243|).
+* |sofia| est satisfaite car |bob| travaille vite.
+* |sofia| veux dores et déjà planifier le débosselage/peinture de la porte.
+* |sofia| crée une |Invervention|:|i251| qui requière |qp1|:|Qualification|.
+* |sofia| voit que |cyndie|:|Intervenant| et |mohamed|:|Intervenant| sont qualifiés |qp1|.
+* |mohamed| est absent.
+* |sofia| voit que |cyndie| est occupée mais qu'elle sera bientôt disponible.
+* |sofia| crée une nouvelle |Intervention|:|i251| pour |cyndie|.
+* |i251| est maintenant en attente.
+* |cyndie| est maintenant |Attendu|e.
+* La |Reparation|:|r874| reste une |ReparationEnCours| car |i243| et |i246| sont encore en cours.
+* `2015-09-20 01:31`
+* |bob| a terminé de démonter la porte A.G..
+* |sofia| pause l'|Intervention|:|i243|.
+* |bob| est satisfait car il a fait vite et il sait qu'il reprendra plus tard l'|Intervention|:|i243|.
+* La |Reparation|:|r874| reste une |ReparationEnCours| car |i246| est en cours.
+* |bob| redevient disponible.
+* `2015-09-20 01:34`
+* |cyndie| termine l'|Intervention|:|i247| qui l'occupait.
+* |cyndie| l'indique à |melody|:|ChefDAtelier|.
+* |melody| boucle |i247|.
+* |cyndie| est appelée par l'|Intervention|:|i251|.
+* `2015-09-20 01:35`
+* |cyndie| commence l'intervention |i251|.
+* |sofia| démarre donc |i251|.
+* `2015-09-20 01:40`
+* |john| s'appercoit que le circuit de refroidissement fuit encore (|i246|).
+* |john| retourne au |Magazin| chercher une autre bague ainsi qu'un bouchon.
+* |djamila|:|Magazinier| fourni ces deux types de pièces.
+* `2015-09-20 01:50`
+* |john| a résolu le problème de la fuite.
+* |john| montre le résultat à |sofia| qui est satisfaite.
+* |sofia| boucle l'|Intervention|:|i246|.
+* L'intervention |i246| a duré 30mn.
+* `2015-09-20 02:00`
+* |tuan|:|ChefDAtelier| crée une |Intervention|:|i263| pour |cyndie|.
+* |cyndie| est très demandée à cause de sa |Qualification|:|qp1|.
+* |cyndie| intervient toujours sur |i251| mais est désormais attendue par |i263|.
+* `2015-09-20 02:30`
+* |cyndie| a terminé le débosselage et montre le résultat à |sofia|.
+* |sofia| lui demande de passer à la peinture de la porte.
+* |cyndie| va chercher la peinture BT12 au |Magazin| ainsi que de l'enduit lisseur.
+* |antonino|:|Magazinier| crée la |Fourniture| de l'enduit lisseur et le donne à |cyndie|.
+* |antonino|:|Magazinier| constate que la peinture est en rupture de stock.
+* |antonino| indique qu'il va falloir commander cette peinture.
+* |antonino| crée la |Fourniture|:|f212| pour 3 pots de peinture et la marque en rupture.
+* `2015-09-20 02:35`
+* |cyndie| informe |sofia| que la |Fourniture| de la peinture est en rupture.
+* |sofia| est furieuse car elle ne pourra pas boucler la réparation |r248| cette nuit.
+* |sofia| suspend l'|Intervention|:|i251| pour rupture de |Fourniture|.
+* |sofia| laisse un message à |keny| pour lui indiquer que le |Vehicule| sera |MiseADisposition| en retard.
+* `2015-09-22 19:00`
+* |toufik| recoit une livraison au |Magazin|.
+* |toufik| voit la |Fourniture|:|f212| (3 pots de peinture BT12 en rupture).
+* |toufik| met ces 3 pots de cotés.
+* |toufik| indique que la |f212| est désormais |EnStock|.
+* L'|Intervention|:|i251| devient |EnStock|.
+* La |Reparation|:|r248| devient une |ReparationEnStock|
+* |sofia| est prévenue que la |Fourniture|:|f212| est désormais |EnStock|.
+* |sofia| étudie la réparation |r248|.
+* |sofia| voit qu'elle a besoin de |cyndie| et de |bob|.
+* |sofia| téléphone à |cyndie| au `854757851`.
+* |sofia| demande à |cyndie| si elle sera présente vers 23:00 au |Garage|:|gCC| `Chicoutimi Central`.
+* |cyndie| lui dit qu'elle passera à `23:30` après ses cours de piano.
+* |sofia| téléphone à |bob| au `854758452`.
+* |bob| lui dit qu'il passer à `22:00` après la piscine.
+* `2015-09-22 22:00`
+* |bob| pointe à l'|Atelier| de |gCC| `Chicoutimi Central`. 
+* |bob| va à l'|EspaceDetente| et commence à réviser pour son examen de droit.
+* `2015-09-22 23:25`
+* |cyndie| pointe à l'|Atelier| de |gCC| `Chicoutimi Central`. 
+* |cyndie| va boire un café à l'|EspaceDetente|.
+* |cyndie| est disponible.
+* `2015-09-22 23:29`
+* |sofia| voit que |cyndie| est disponible.
+* |sofia| reactive l'|Intervention|:|i251|.
+* |i251| devient |EnAttente| de |cyndie|.
+* La |Reparation|:|r248| devient une |ReparationEnAttente|
+* `2015-09-22 23:30`
+* |cyndie| vient voir |sofia| et reprend l'|Intervention|:|i251|.
+* |sofia| marque l'|Intervention|:|i251| |EnCours|.
+* La |Reparation|:|r248| devient une |ReparationEnCours|.
+* |cyndie| va au |Magazin|.
+* `2015-09-22 23:32`
+* |cyndie| demande a |toufik|:|Magazinier| les 3 pots de peinture BT12.
+* |toufik| lui donne les pots.
+* |toufik| marque que la |Fourniture|:|f212| comme étant fournie.
+* |cyndie| commence la peinture de la porte A.G..
+* `2015-09-22 23:42`
+* |bob| est appelé pour une |Intervention|:|i270| sur un |Vehicule|.
+* |bob| range son cartable dans un casier de l'|EspaceDetente| et va vers l'|Atelier|.
+* `2015-09-22 23:45`
+* |bob| commence à travailler sur l'|Intervention|:|i270|.
+* |bob| est donc occupé.
+* `2015-09-23 00:30`
+* |cyndie| a terminé la peinture et appelle |sofia|.
+* |sofia| voit que le résultat est satisfaisant.
+* |sofia| boucle l'intervention |i251|.
+* La durée de |i251| est de `120` mn.
+* La |Reparation|:|r248| devient une |ReparationEnPause|??? car toutes les interventions sont bouclées sauf |i243| qui est |EnPause|.
+* `2015-09-23 00:35`
+* La porte A.G. doit maintenant être remontée.
+* Il s'agit de l'|Intervention|:|i243| de |bob|.
+* |sofia| voit que |bob| travaille sur l'|Intervention|:|i270|.
+* |sofia| va voir |bob| qui lui indique qu'il compte terminer bientot.
+* |sofia| marque l'intervention |i243| comme étant en attente de |bob|.
+* La |Reparation|:|r248| devient une |ReparationEnAttente|??? car toutes les interventions sont bouclées sauf |i243| qui est |EnAttente|.
+* |bob| est maintenant attendu.
+* `2015-09-23 00:48`
+* |bob| vient de terminer l'|Intervention|:|i293|.
+* |bob| est maintenant appelé par |i243|.
+* `2015-09-23 00:50`
+* |bob| va voir |sofia| qui lui demande de remonter la porte A.G..
+* |sofia| redemarre l'|Intervention|:|i243|.
+* `2015-09-23 01:20`
+* |bob| a terminé le montage de la porte A.G. (|i293|).
+* |sofia| boucle l'|Intervention|:|i243|.
+* La |Reparation|:|r248| devient une |ReparationEnPlan| car toutes les |Intervention|s sont bouclées.
+* `2015-09-23 01:21`
+* |sofia| met |r248| comme |ReparationEnBouclage|.
+* |sofia| inspecte minutieusement le |Vehicule|:|v684QBC|.
+* |sofia| démarre le |Vehicule|:|v684QBC|.
+* |sofia| va faire un tour pour avec |v684QBC| vérifier que tout va bien.
+* `2015-09-23 01:31`
+* |sofia| revient à l'|Atelier|.
+* |sofia| indique que la est satisfaisante.
+* Comme les |Intervention|s n'ont pas été |Abbatue| la |r248| devient une |ReparationAAbbatre|.
+* `2015-09-22 03:00`
+* |draco|:|Abbateur| voit que la |Reparation|:|r874| est |AAbbatre|.
+* |draco| voit que |keny| dispose de trois |Contrat|s valides (|c1|,|c2|,|c3|).
+* |draco| connait bien le contenu des |ContratDAssurance|:|c1| et du |ContratDeServices|:|c3|.
+* |draco| utilise |sysClt|:|CyberClientelle| pour visualiser les documents associés au |ContratConstructeur|:|c2|.
+* |draco| connait maintenant bien les clauses des différents |Contrat|s de |keny|.
+* |draco| liste les |Intervention|s de |r874|.
+* `2015-09-22 03:20`
+* Il y a 4 |Intervention|s bouclées: |i246|,|i232|,|i243|,|i251|.
+* |draco| abbat 100% pour |i232| (la vidange) grâce au |ContratDeService|:|c3|.
+* `2015-09-22 03:22`
+* |draco| abbat 50% pour |i251|  grâce au |ContratDAssurance|:|c1|.
+* |draco| abbat aussi 40% pour |i251| grâce au |ContratConstructeur|:|c2|.
+* `2015-09-22 03:24`
+* |draco| abbat 100% pour (|i243|) grâce à |c1|.
+* `2015-09-22 03:26`
+* |draco| marque |i246| comme abbatue (même s'il n'y a pas d'|Abbatement|s).
+* La |Reparation|:|r248| redevient une |ReparationEnBouclage|.
+* `2015-09-22 04:10`
+* |sofia| voit que |r248| est une |ReparationEnBouclage|.
+* |sofia| regarde les coûts associés à chaque |Intervention|.
+* |sofia| regarde également les coûts totaux.
+* Le |MontantTotal| est de $`655.00`.
+* Le |MontantDAbbatement| est de $`528.00`.
+* |sofia| est très contente du travail que |Draco| a fait.
+* |sofia| donne `3` |Peanut|s à |Draco|.
+* |sofia| est très contente également des travaux de |cyndie| et de |bob|.
+* |sofia| donne `6` |Peanut|s à |cyndie| et `8` |Peanut|s à |bob|.
+* |sofia| est satisfaite car elle avait évoqué environ $300 à payer dans sa discussion avec |Keny|.
+* |sofia| voit également le retard de 2 jours par rapport à la date |MAD| prévue.
+* |sofia| décide de faire bénéficier |Keny| de 2 jours de |RetardMAD| soit $`40` de remise.
+* Le |MontantClient| est donc de $`27`.
+* |sofia| boucle la |Reparation|:|r874|.
+* La |Reparation|:|r248| devient |ReparationABoucler|
+* |sofia| indique à |keny| que son |Vehicule| est mis à disposition et qu'elle devrait avoir environ $50 à régler.
+* `2015-09-24 06:30`
+* |keny| se rend à l'|Atelier|.
+* |sofia| est en vacances.
+* |ralf|:|ChefDAtelier| la reçoit et donne les clés de son |Vehicule|:|v684QBC|.
+* |ralf| indique à |keny| qu'elle devrait reçevoir une |Facture| sous 3 jours.
+* |keny| part avec |v684QBC|.
+* |ralf| marque la |Reparation|:|r874| comme |ReparationLivree|.

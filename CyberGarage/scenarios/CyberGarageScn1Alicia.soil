@@ -1,0 +1,114 @@
+-- CyberGarageScn1Alicia
+-- =====================
+-- 
+-- * `2015-09-20 00:10`
+-- * |alicia| sort d'une fête et il neige.
+-- * |alicia| décide d'aller tout de suite au |Garage|:|gCC| `Chicoutimi Central`.
+-- * |alicia| veut faire monter les pneus neiges qu'elle à dans le coffre de sa Jaguar.
+-- * `2015-09-20 00:35`
+-- * |alicia| se rend directement à l'|Atelier| du |Garage|:|gCC|.
+-- * |alicia| rencontre |sofia|:|ChefDAtelier|.
+            ! sofia := new ChefDAtelier('sofia')
+-- * |alicia| dit à |sofia| qu'elle voudrait faire changer les pneus dès que possible.
+-- * `2015-09-20 00:40`
+-- * |sofia| indique à |alicia| que la |Reparation| devrait durer a priori moins d'une 1h.
+-- * |sofia| crée une nouvelle |Reparation|:|r877|
+
+
+-- ucenter sofia:ChefDAtelier CreerUneReparation
+    ! r877 := new Reparation('r877')
+    ! r877.dateDEntree := '2015-09-20'
+-- * |sofia| indique le |NumeroDImmatriculation| `"821BC78"`.
+-- * |sofia| voit que le |Vehicule|:|v821BC78| est déjà enregistré.
+            ! v821BC78 := new Vehicule('v821BC78')
+            ! v821BC78.immatriculation := '821BC78'
+    ! insert (r877,v821BC78) into ConcerneVehicule
+-- * |sofia| voit qu'|alicia|:|Client| est bien |Proprietaire| du |Vehicule|:|v821BC78|.
+            ! alicia := new Client('alicia')
+            ! alicia.nom :='Alicia BOUCHARD'
+            ! alicia.numero := '01871A'
+            ! alicia.codePass := '7217'
+            ! insert (alicia,v821BC78) into EstProprietaireDe
+-- * |sofia| voit qu'|alicia| possède un autre |Vehicule|:|v727EF87|.
+            ! v727EF87 := new Vehicule('v727EF87')
+            ! insert (alicia,v727EF87) into EstProprietaireDe
+-- * |sofia| prévoit une date de |MisADisposition| au `2015-09-20`
+    ! r877.dateMADPrevue := '2015-09-20'
+-- * |sofia| imprime un bordereau de prise en charge daté du `2015-09-20`.
+-- ucexit sofia:ChefDAtelier CreerUneReparation
+
+-- * |sofia| propose à |alicia| aller attendre en l'|EspaceDetente|.
+-- * |alicia| va à l'|EspaceDetente|.
+-- * `2015-09-20 00:45`
+
+
+-- ucenter sofia:ChefDAtelier CreerUneIntervention
+-- * |sofia| crée une |Intervention|:|i238| nommée `"Montage pneus neiges"`.
+    ! i238 := new Intervention('i238')
+    ! i238.nom := 'Montage pneus neiges'
+    ! insert (i238,r877) into PorteSur
+-- * |sofia| indique que l'|Intervention|:|i238| requière une |Qualification|:|qnr2|.
+            ! qnr2 := new Qualification
+    ! insert (i238,qnr2) into Requiere
+-- * Le code de |qnr2| est `"NR2"`.
+            ! qnr2.code := 'NR2'
+-- * Le |TauxHoraire| de la |Qualification|:|qnr2| est de $90/h.
+            ! qnr2.tauxHoraire := 90
+-- * |sofia| a selectionné |qnr2| car le type du |Vehicule| est `"JAGUAR F-Cabriolet"`.
+            ! v727EF87.type := 'JAGUAR F-Cabriolet'
+-- * |sofia| voit que |cyndie|:|Intervenant| et |mohamed|:|Intervenant| sont qualifiés |qnr2|.
+            ! cyndie := new Intervenant('cyndie')
+            ! mohamed := new Intervenant('mohamed')
+            ! insert (cyndie,qnr2) into EstQualifie
+            ! insert (mohamed,qnr2) into EstQualifie
+-- * |mohamed| est absent.
+            ! mohamed.etat := EtatDIntervenant::absent
+-- * |cyndie| est par contre disponible.
+            ! cyndie.etat := EtatDIntervenant::disponible
+-- * |sofia| désigne donc |cyndie| comme l'|Intervenant| pour |i238|.
+            ! insert (cyndie,i238) into EstIntervenantDe
+-- * |cyndie| est appelée.
+    ! cyndie.etat := EtatDIntervenant::appele
+-- ucexit sofia:ChefDAtelier CreerUneIntervention
+
+
+-- * `2015-09-20 00:50`
+-- * |cyndie| va voir |sofia| qui lui explique le contenu de l'|Intervention|:|i238|.
+
+
+-- ucenter sofia:ChefDAtelier DemarrerUneIntervention
+-- * |cyndie| sort les pneus du coffre et commence à travailler.
+    ! cyndie.etat := EtatDIntervenant::occupe
+-- * |sofia| démarre l'|Intervention|:|i238|.
+    ! i238.derniereModification := '2015-09-20 00:50'
+-- ucexit sofia:ChefDAtelier DemarrerUneIntervention
+
+
+-- * `2015-09-20 01:10`
+-- * |cyndie| a terminé le montage des pneus sur le |Vehicule|:|v821BC78|.
+-- * |cyndie| montre le résultat à |sofia|.
+
+
+-- ucenter sofia:ChefDAtelier BouclerUneIntervention
+-- * |sofia| boucle l'|Intervention|:|i238|.
+    ! i238.etat := EtatDIntervention::bouclee
+-- * |cyndie| est maintenant disponible.
+    ! cyndie.etat := EtatDIntervenant::disponible
+-- * L'|Intervention|:|i238| aura duré `20`mn.
+    ! i238.duree := 20
+    ! i238.derniereModification := '2015-09-20 01:10'
+-- ucexit sofia:ChefDAtelier BouclerUneInvervention
+
+
+-- ucenter sofia:ChefDAtelier BouclerUneReparation
+-- * |sofia| boucle la |Reparation|:|r877|.
+    ! r877.etat := EtatDeReparation::bouclee
+-- ucexit sofia:ChefDAtelier BouclerUneReparation
+
+
+-- * `2015-09-20 01:15`
+-- * |sofia| va chercher |alicia| dans l'|EspaceDetente|.
+-- * |sofia| inqique à |alicia| qu'elle devra régler moins de $100.
+-- * |sofia| indique à |alicia| qu'elle devrait reçevoir une |Facture| sous 3 jours.
+-- * |alicia| part avec le |Vehicule|:|v821BC78|.
+

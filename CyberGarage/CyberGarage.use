@@ -1,0 +1,116 @@
+-- This model is incomplete. It contains currently only the definitions
+-- necessary to execute the scenario Scn1Alicia.
+-- The roles of associations have been omited and but MUST be added.
+-- The cardinality have been systematically set to * but this MUST be refined.
+-- Enumeration MUST be completed, as well as the set of classes, of associations.
+-- Attributes MUST be added.
+
+model CyberGarage
+
+enum EtatDeReparation {
+   bouclee
+}
+
+enum EtatDIntervenant {
+    absent,
+    disponible,
+    appele,
+    occupe
+    -- ...
+}
+
+enum EtatDIntervention {
+    bouclee
+    -- ...
+}
+
+-- Enumerations to be added
+-- ...
+
+class Client
+attributes
+   nom : String
+   numero : String
+   codePass : String
+   -- ...
+end
+
+class ChefDAtelier
+attributes
+   -- ...
+end
+
+class Intervenant
+attributes
+    etat : EtatDIntervenant
+   -- ...
+end
+
+class Reparation
+attributes
+    etat : EtatDeReparation
+    dateDEntree : String        -- date au format 'YYYY-MM-DD'
+    dateMADPrevue : String      -- date au format 'YYYY-MM-DD'
+    -- ...
+end
+
+class Intervention
+attributes
+    nom : String
+    derniereModification : String -- datetime au format 'YYYY-MM-DD HH:MM'
+    duree : Integer -- unité: minutes
+    etat : EtatDIntervention
+    -- ...
+end
+
+class Vehicule
+attributes
+    immatriculation : String
+    type : String
+    -- ...
+end
+
+class Qualification
+attributes
+    code : String
+    tauxHoraire : Real
+    -- ...
+end
+
+-- Classes to be added
+-- ...
+
+association EstIntervenantDe  between
+    Intervenant[*]  -- Cardinality and role to be defined
+    Intervention[*] -- Cardinality and role to be defined
+end
+
+association EstQualifie between
+   Intervenant[*]   -- Cardinality and role to be defined
+   Qualification[*] -- Cardinality and role to be defined
+end
+
+association Requiere between
+    Intervention[*]  -- Cardinality and role to be defined
+    Qualification[*] -- Cardinality and role to be defined
+end
+
+association EstProprietaireDe between
+   Client[*]         -- Cardinality and role to be defined
+   Vehicule[*]       -- Cardinality and role to be defined
+end
+
+
+association ConcerneVehicule between
+    Reparation[*]    -- Cardinality and role to be defined
+    Vehicule[*]      -- Cardinality and role to be defined
+end
+
+association PorteSur between
+    Intervention[*]  -- Cardinality and role to be defined
+    Reparation[*]    -- Cardinality and role to be defined
+end
+
+
+-- Association to be added
+-- ...
