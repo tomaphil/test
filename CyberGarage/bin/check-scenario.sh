@@ -11,7 +11,5 @@
 # This command produces a file in output/use.out
 
 echo "The result will be in scenarios/output/use.out"
-echo "Type Ctrl-C to terminate the process"
-
-use -nogui -nr CyberGarage.use $2 scenarios/CyberGarage$1.soil >scenarios/output/use.out 2>&1
+echo 'quit' | use -nogui -nr CyberGarage.use $2 scenarios/CyberGarage$1.soil >scenarios/output/use.out 2>&1
 

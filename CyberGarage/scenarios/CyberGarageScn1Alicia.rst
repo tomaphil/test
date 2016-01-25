@@ -47,3 +47,6 @@ CyberGarageScn1Alicia
 * |sofia| inqique à |alicia| qu'elle devra régler moins de $100.
 * |sofia| indique à |alicia| qu'elle devrait reçevoir une |Facture| sous 3 jours.
 * |alicia| part avec le |Vehicule|:|v821BC78|.
+
+
+
